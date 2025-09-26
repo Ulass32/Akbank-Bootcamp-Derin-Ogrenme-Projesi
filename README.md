@@ -5,7 +5,7 @@ Bu proje, Akbank Derin Öğrenme Bootcamp kapsamında geliştirilmiş olup, Inte
 Amaç, CNN tabanlı bir model eğiterek görselleri doğru sınıfa atamak ve elde edilen sonuçları değerlendirmektir.
 
 # Metrikler
-1. Veri İncelemesi ve Ön İşleme
+1. Veri İncelemesi ve Ön İşleme /n
 Kullanılan veri seti, Kaggle’daki Intel Image Classification veri kümesi olmuştur ve 6 sınıf içerir: Buildings, Forest, Glacier, Mountain, Sea, Street.
 Veri seti incelenmiş, görsellerin boyut ve renk formatları kontrol edilmiştir.
 Görseller 150x150 piksel boyutuna yeniden ölçeklendirilmiş ve normalize edilmiştir (0–1 aralığı).
