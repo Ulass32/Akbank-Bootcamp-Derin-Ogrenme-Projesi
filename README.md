@@ -1,1 +1,1 @@
-# Akbank-Bootcamp-Derin-renme-Projesi
+# Akbank-Bootcamp-Derin-Ogrenme-Projesi
