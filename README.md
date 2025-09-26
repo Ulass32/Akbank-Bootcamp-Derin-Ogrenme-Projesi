@@ -6,7 +6,7 @@ Bu proje, Akbank Derin Öğrenme Bootcamp kapsamında geliştirilmiş olup, Inte
 Amaç, CNN tabanlı bir model eğiterek görselleri doğru sınıfa atamak ve elde edilen sonuçları değerlendirmektir.
 
 # Metrikler
-1. Veri İncelemesi ve Ön İşleme
+**1. Veri İncelemesi ve Ön İşleme**
 
 Kullanılan veri seti, Kaggle’daki Intel Image Classification veri kümesi olmuştur ve 6 sınıf içerir: Buildings, Forest, Glacier, Mountain, Sea, Street.
 
@@ -34,7 +34,7 @@ Görsellerin ışık ve kontrast seviyelerinin rastgele değiştirilmesidir.
 Farklı ışık koşullarında çekilmiş görsellerle modelin daha dayanıklı ve genelleyici olmasını sağlar. Örneğin bir fotoğraf güneşli veya bulutlu bir ortamda çekilmiş olsa da sınıf doğru tanınabilir.
 Bu sayede modelin genelleme kapasitesi artırılmıştır.
 
-2. Model Eğitimi
+**2. Model Eğitimi**
 
 Eğitilen model CNN tabanlı bir mimari kullanmıştır:
 Conv2D Katmanları → Görsel Özellik Çıkarımı
@@ -61,7 +61,7 @@ Modelin eğitiminde Adam optimizer ve categorical_crossentropy loss fonksiyonu k
 Eğitim sürecinde EarlyStopping uygulanarak validation loss değeri artmaya başladığında eğitim durdurulmuştur.
 En iyi model ModelCheckpoint ile kaydedilmiştir.
 
-3. Grad-CAM ve Açıklanabilirlik Analizi
+**3. Grad-CAM ve Açıklanabilirlik Analizi**
 
 Modelin karar mekanizmasını incelemek için Grad-CAM heatmap yöntemi uygulanmıştır.
 Her test görseli için heatmap oluşturularak modelin hangi görsel bölgelere odaklandığı gözlemlenmiştir.
@@ -72,7 +72,7 @@ Modelin doğru sınıflandırdığı görsellerde önemli özelliklerin (ör. bi
 
 Yanlış sınıflanan görsellerde ise modelin dikkatinin farklı bölgelerde toplandığı ve sınıf karışıklığının bu nedenle gerçekleştiği görülmüştür.
 
-4. Model Değerlendirme ve Metrikler
+**4. Model Değerlendirme ve Metrikler**
 
 Accuracy (Doğruluk): Modelin test verisi üzerindeki doğruluk oranı %88–%92 aralığında elde edilmiştir.
 
@@ -95,7 +95,7 @@ ROC-AUC Analizi: Modelin her sınıf için duyarlılık ve özgüllüğü değer
 
 Cross-validation: Eğitim verisi 5 katlı cross-validation ile test edilmiş; farklı veri bölmelerinde de modelin performansının tutarlı olduğu belirlenmiştir.
 
-5. Bulgular ve Yorum
+**5. Bulgular ve Yorum**
 
 Model genel olarak başarılı bir sınıflandırma performansı sergilemiştir.
 
@@ -123,23 +123,23 @@ Precision, Recall ve F1-Score metriklerinde tatmin edici değerler elde edildi v
 
 # Ekler
 
-1. Görseller ve Heatmap’ler
+**1. Görseller ve Heatmap’ler**
 
 Grad-CAM görselleri ile modelin karar verdiği bölgeler açıklanabilir hâle getirilmiştir.
 
 Yanlış sınıflanan örnekler de incelenmiş, modelin hangi bölgelerde hata yaptığı görselleştirilmiştir:
 
-2. Confusion Matrix ve Metrikler Tablosu
+**2. Confusion Matrix ve Metrikler Tablosu**
 
 Sınıf bazlı performans ve hata oranları confusion matrix ile detaylandırılmıştır.
 
 Precision, Recall ve F1-Score tabloları
 
-3. Eğitim / Doğrulama Grafikleri
+**3. Eğitim / Doğrulama Grafikleri**
 
 Eğitim süreci boyunca accuracy ve loss grafikleri elde edilmiştir:
 
-4. Notlar ve Ek Açıklamalar
+**4. Notlar ve Ek Açıklamalar**
 
 Modelin karar mekanizmasının açıklanabilirliği Grad-CAM görselleriyle desteklenmiştir.
 
@@ -179,4 +179,4 @@ Daha gelişmiş açıklanabilirlik yöntemleri (LIME, SHAP) kullanılarak modeli
 
 Çalışmaya ait tüm Kaggle linkleri aşağıdadır:
 
-https://www.kaggle.com/code/ulagler/akbank-bootcamp/edit
+**https://www.kaggle.com/code/ulagler/akbank-bootcamp**
