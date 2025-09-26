@@ -18,25 +18,45 @@ Veri setinde sınıf dağılımı kontrol edilmiş; dengesizlik tespit edilmesi 
 
 Görseller üzerinde veri arttırma teknikleri uygulanmıştır:
 
-Dikey ve yatay flip
+1. Dikey ve Yatay Flip:
 
-Rastgele döndürme (rotation)
+Görsellerin dikey (üst-alt) veya yatay (sol-sağ) olarak çevrilmesidir.
+Modelin farklı yönlerdeki varyasyonları tanımasını sağlar ve veriyi çoğaltır. Örneğin bir ağaç veya bina resmi sağa çevrilmiş veya tersine çevrilmiş olsa da sınıf doğru tanınabilir.
 
-Parlaklık ve kontrast değişiklikleri
+2. Rastgele Döndürme (Rotation):
 
+Görsellerin belirli bir açı aralığında rastgele döndürülmesidir (ör. -30° ile +30°).
+Modelin nesneleri farklı açılarda tanımasını sağlar ve verinin çeşitliliğini artırır. Bu sayede model, görsellerin sadece belirli açılardaki versiyonlarına bağımlı kalmaz.
+
+3. Parlaklık ve Kontrast Değişiklikleri:
+
+Görsellerin ışık ve kontrast seviyelerinin rastgele değiştirilmesidir.
+Farklı ışık koşullarında çekilmiş görsellerle modelin daha dayanıklı ve genelleyici olmasını sağlar. Örneğin bir fotoğraf güneşli veya bulutlu bir ortamda çekilmiş olsa da sınıf doğru tanınabilir.
 Bu sayede modelin genelleme kapasitesi artırılmıştır.
 
 2. Model Eğitimi
 
 Eğitilen model CNN tabanlı bir mimari kullanmıştır:
+Conv2D Katmanları → Görsel Özellik Çıkarımı
 
-Conv2D katmanları → Görsel özellik çıkarımı
+Görsellerin kenar, renk, doku ve şekil gibi özelliklerini yakalamak için kullanılır.
+Filtreler (kernel) aracılığıyla görseldeki önemli desenler çıkarılır.
 
-MaxPooling → Boyut küçültme ve önemli özellikleri koruma
+2. MaxPooling → Boyut Küçültme ve Önemli Özellikleri Koruma
 
-Dropout → Overfitting önleme
+Özellik haritalarının boyutunu küçültür, hesaplamayı hafifletir.
+Aynı zamanda en baskın özellikleri koruyarak modelin daha sağlam öğrenmesini sağlar.
 
-Dense katmanlar → Sınıflandırma
+3. Dropout → Overfitting Önleme
+
+Eğitim sırasında bazı nöronlar rastgele kapatılır, böylece model belirli özelliklere fazla bağımlı olmaz.
+Bu, modelin genelleme kabiliyetini artırır ve overfitting’i azaltır.
+
+4. Dense Katmanlar → Sınıflandırma
+
+Tüm öğrenilen özellikleri birleştirir ve sınıflar arasında tahmin yapar.
+Genellikle CNN’in son katmanlarıdır ve modelin çıktısını oluşturur.
+
 Modelin eğitiminde Adam optimizer ve categorical_crossentropy loss fonksiyonu kullanılmıştır.
 Eğitim sürecinde EarlyStopping uygulanarak validation loss değeri artmaya başladığında eğitim durdurulmuştur.
 En iyi model ModelCheckpoint ile kaydedilmiştir.
@@ -61,7 +81,6 @@ Loss (Kayıp): Hem eğitim hem validation loss değerleri düzenli olarak azalm�
 Confusion Matrix:
 
 Çoğu sınıf doğru tahmin edilmiştir.
-
 Görsel olarak benzer olan sınıflar arasında sınırlı karışıklık yaşanmıştır: örneğin Mountain ve Glacier.
 
 Precision / Recall / F1-score:
