@@ -130,10 +130,34 @@ Kullanıcı, kendi görsellerini veya ek analizlerini ekleyerek bu ekler bölüm
 
 
 # Sonuç ve Gelecek Çalışmalar
-Burası da, yaptığınız çalışma ile ilgili nasıl bir gelecek hayal ettiğinizi gösteren bir bölüm olacak. Unutmayın, buraya koyduğunuz proje bootcampten sonra da sizinle kalmaya devam edecek. Her zaman için yeni bölümler ekleyebilir, değişiklikler yapabilir ve projenizi daha güzel hale getirebilirsiniz. 
-Projenizi geliştirirken sonrası için şunu düşünün, nasıl daha kaliteli hale getirilebilir? Arayüz mü eklenmeli? Veri toplama aşaması dinamik, gerçek zamanlı mı yapılmalı? Gelecekte öğrenmek istediğiniz teknolojiler ve kariyerinize vermek istediğiniz yön için yazarak düşünmeniz size de belirleyici olacaktır.
+
+Eğitim süreci boyunca modelin doğruluk oranının düzenli olarak arttığı gözlemlenmiştir.
+
+Hem eğitim hem doğrulama aşamasında kayıp (loss) değerlerinde belirgin bir azalma elde edilmiştir.
+
+Model ile yüksek doğruluk oranına ulaşılması sağlanmıştır.
+
+Çeşitli sınıflar üzerinde yapılan değerlendirmelerde genel olarak başarılı bir sınıflandırma performansı elde edilmiştir.
+
+Confusion matrix analizinde sınıfların büyük çoğunluğunun doğru şekilde tahmin edildiği, yalnızca bazı görsel benzerliklerden dolayı sınırlı sayıda karışıklık yaşandığı belirlenmiştir.
+
+Precision, Recall ve F1-Score metriklerinde tatmin edici değerler elde edilmiş ve sınıflar arasında dengeli bir performans sergilenmiştir.
+
+Grad-CAM analizleri ile modelin karar mekanizmasının açıklanabilir ve yorumlanabilir hâle getirildiği gözlemlenmiştir.
+
+
+Daha derin CNN veya transfer learning tabanlı mimariler (ResNet, EfficientNet, VGG16) ile performansın artırılması planlanmaktadır.
+
+Veri arttırma teknikleri ve regularization yöntemleri ile modelin genelleme kapasitesinin iyileştirilmesi hedeflenmektedir.
+
+Hiperparametre optimizasyonu ve farklı optimizer/learning rate ayarlamaları ile doğruluk ve loss değerlerinin daha da iyileştirilmesi sağlanabilir.
+
+Modelin API veya web arayüzü ile canlı olarak entegre edilmesi planlanmaktadır.
+
+Daha gelişmiş açıklanabilirlik yöntemleri (LIME, SHAP) kullanılarak modelin karar mekanizmasının detaylı şekilde yorumlanması hedeflenmektedir.
 
 # Linkler
 
 Çalışmaya ait tüm Kaggle linkleri aşağıdadır:
+
 https://www.kaggle.com/code/ulagler/akbank-bootcamp/edit
