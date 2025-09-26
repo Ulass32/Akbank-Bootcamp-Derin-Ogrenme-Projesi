@@ -2,20 +2,28 @@
 
 # Giriş
 Bu proje, Akbank Derin Öğrenme Bootcamp kapsamında geliştirilmiş olup, Intel Image Classification veri seti kullanılarak görsel sınıflandırma (image classification) üzerine odaklanmaktadır. Veri seti; Buildings, Forest, Glacier, Mountain, Sea, Street olmak üzere 6 farklı sınıftan görseller içermektedir.
+
 Amaç, CNN tabanlı bir model eğiterek görselleri doğru sınıfa atamak ve elde edilen sonuçları değerlendirmektir.
 
 # Metrikler
 1. Veri İncelemesi ve Ön İşleme
 
 Kullanılan veri seti, Kaggle’daki Intel Image Classification veri kümesi olmuştur ve 6 sınıf içerir: Buildings, Forest, Glacier, Mountain, Sea, Street.
+
 Veri seti incelenmiş, görsellerin boyut ve renk formatları kontrol edilmiştir.
+
 Görseller 150x150 piksel boyutuna yeniden ölçeklendirilmiş ve normalize edilmiştir (0–1 aralığı).
+
 Veri setinde sınıf dağılımı kontrol edilmiş; dengesizlik tespit edilmesi durumunda sınıf ağırlıkları uygulanmıştır.
+
 Görseller üzerinde veri arttırma teknikleri uygulanmıştır:
 
 Dikey ve yatay flip
+
 Rastgele döndürme (rotation)
+
 Parlaklık ve kontrast değişiklikleri
+
 Bu sayede modelin genelleme kapasitesi artırılmıştır.
 
 2. Model Eğitimi
@@ -93,11 +101,33 @@ Eğitim sonunda model ile yüksek doğruluk oranına ulaşılması sağlandı.
 Confusion matrix analizinde sınıfların büyük çoğunluğunun doğru şekilde tahmin edildiği, yalnızca bazı görsel benzerliklerden dolayı sınırlı sayıda karışıklık yaşandığı belirlendi.
 
 Precision, Recall ve F1-Score metriklerinde tatmin edici değerler elde edildi ve sınıflar arasında dengeli bir performans sergilendi.
-# Ekler
-Projeniz kapsamında deployment, end-to-end GPU gibi ekstra çalışmaları da eklerseniz, onları anlatmak için de bu şekilde ayrı bir bölüm eklemenizi bekleriz.
-Örneğin, repoda UI adında bir klasör daha var. Streamlit ile projeyi deploy edebilmeniz için örnek bir script içeriyor.
 
-**Dikkat: Klasörün içindeki notebook, supervised ve unsupervised notebooklarından farklı. Ancak sizin projenizde, supervised ve (eğer yapmayı tercih ederseniz) unsupervised notebooklarınızı deploy ediyor olacaksınız, farklı bir notebook gerekmiyor.**
+# Ekler
+
+1. Görseller ve Heatmap’ler
+
+Grad-CAM görselleri ile modelin karar verdiği bölgeler açıklanabilir hâle getirilmiştir.
+
+Yanlış sınıflanan örnekler de incelenmiş, modelin hangi bölgelerde hata yaptığı görselleştirilmiştir:
+
+2. Confusion Matrix ve Metrikler Tablosu
+
+Sınıf bazlı performans ve hata oranları confusion matrix ile detaylandırılmıştır.
+
+Precision, Recall ve F1-Score tabloları
+
+3. Eğitim / Doğrulama Grafikleri
+
+Eğitim süreci boyunca accuracy ve loss grafikleri elde edilmiştir:
+
+4. Notlar ve Ek Açıklamalar
+
+Modelin karar mekanizmasının açıklanabilirliği Grad-CAM görselleriyle desteklenmiştir.
+
+Görsel örnekler, hatalı sınıflamalar ve sınıf karışıklıkları detaylı olarak incelenmiştir.
+
+Kullanıcı, kendi görsellerini veya ek analizlerini ekleyerek bu ekler bölümünü genişletebilir.
+
 
 # Sonuç ve Gelecek Çalışmalar
 Burası da, yaptığınız çalışma ile ilgili nasıl bir gelecek hayal ettiğinizi gösteren bir bölüm olacak. Unutmayın, buraya koyduğunuz proje bootcampten sonra da sizinle kalmaya devam edecek. Her zaman için yeni bölümler ekleyebilir, değişiklikler yapabilir ve projenizi daha güzel hale getirebilirsiniz. 
